@@ -1,0 +1,18 @@
+## Graphs
+
+### Bellman-Ford algorithm
+
+<b> Time Complexity: O(VE) </b>
+
+- Single source shortest path.
+- Detect -ve cycle in Graph which Dijkstra can't.
+
+<b>Why V - 1 times iteration?</b> <br />
+We get shortest path from source to all nodes at a time when all the node are relaxed.
+Since there are n - 1 nodes(excluding source for which we already know the distance),it takes a maximum of n - 1 times for all nodes to get relaxed which happens when graph is linear or cyclic (worst case).
+The graph must become stable within n - 1 iteration, else it means that we have a -ve cycle and the array never becomes stable.
+It makes sense because a negative cycle cannot have shortest path because each node will get updated to a lesser value infinitly so we cannot predict a shortest path.
+Using this stability of weight array intuituion, we will be able to detect if a graph has cycle or not using bellman ford algo.
+It is single source shortest path because, first the relaxation happens for
+adjacent nodes of source node and then for subsequent iteration for rest of the nodes
+hence each node will carry the potentially shortest path from source.
