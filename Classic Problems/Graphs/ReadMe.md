@@ -16,3 +16,19 @@ Using this stability of weight array intuituion, we will be able to detect if a 
 It is single source shortest path because, first the relaxation happens for
 adjacent nodes of source node and then for subsequent iteration for rest of the nodes
 hence each node will carry the potentially shortest path from source.
+
+### Floyd-Warshall algorithm
+
+<b> Time Complexity: O(V^3) </b>
+
+- All pairs shorted paths
+- Detect negative cycle in graph (Prefer Bellman-Ford)
+
+If each distance between two nodes can be reduced by an intermediate node _k_, then we update the cost of the two nodes. Hence we check for all nodes as intermediate nodes update if distance between two given node reduces.
+Making all nodes intermediate O(n), and checking simultaneously distance between each node O(n^2) which results to O(n^3).<br/>
+
+If any distance between each node results to -ve, then we can a negative cycle exists in the graph.
+
+1. The Djiktra method can be achieved with less complexity , especially with sparse graphs .
+   By using binary heap as a priority queue we achieve O(nmlogn) and with a fibonacci heap we achieve O( (m+nlogn)\*n).
+2. The main advantage of this method compared to Djiktra is that it can be implemented in a graph even if we have edges of negative weights
