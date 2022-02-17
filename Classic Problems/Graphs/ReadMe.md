@@ -32,3 +32,15 @@ If any distance between each node results to -ve, then we can a negative cycle e
 1. The Djiktra method can be achieved with less complexity , especially with sparse graphs .
    By using binary heap as a priority queue we achieve O(nmlogn) and with a fibonacci heap we achieve O( (m+nlogn)\*n).
 2. The main advantage of this method compared to Djiktra is that it can be implemented in a graph even if we have edges of negative weights
+
+### Kosaraju Algorithm
+
+Time Complexity: O(V + E) - 2 dfs + 1 adj matrix reversal<br/>
+
+- Find strongly connected components in a graph
+
+Strongly connected components are components in graph where there exist a path from any node to any other node.
+Basically, Strongly connected components are nothing but cycles in an directed graph. An undirected graph is always a strongly connected components because one can reach any node from any other node.</br>
+
+Intuition is that if u reverse the directions in graph (transpose/converse), the strongly connected component will still remain same. <br/>
+We traverse the graph using dfs in the order of its topological sort. The number of times dfs is called during this process is nothing but the strongly connected components. First priority node is taken from the topological sort, and its cycle is visited, then the immediate next priority node that is not yet visited is visited and again its cycle elements are visited. In this way all the cycles (Strongly connected components) are visited.<br/>
