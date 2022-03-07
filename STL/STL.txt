@@ -1,0 +1,135 @@
+### vector (#include<vector>)
+- vector<int> v
+- vector<int> v(n)
+- vector<int> v(n, 0)
+- vector<int> v = {10, 20, 30};
+- v.push_back()
+- v.pop_back()
+- v.size()
+- v[i] (or) v.at(i)
+- v.insert(pos, val) // inserts val at that pos
+- v.insert(pos, {1, 2, 3..}) // insert multiple val at that pos
+- v.erase()
+- v.clear()
+- for(auto it = v.begin(); it!=end(); it++) cout << *it;
+- for(auto elem : v) cout << elem
+- vector<vector<int>> v(n, vector<int> m, 0) // 2d vector
+- vector<vector<int>> v(n) // fixed row, variable column size
+- v[i][j]
+- fill(v.begin(), v.end(), num) 
+- v2 = v1 (assign v1 to v2)
+- vector<int> v2(v1) // another way of copying vector
+- reverse(v.begin(), v.end())
+
+### array
+- int a[100];
+- memset(a, 0, sizeof(a)) // fill all values with 0 or -1 only.
+- fill(arr, arr + n, num) 
+
+### sort (#include<algorithm>)
+- sort(arr, arr + n)
+- sort(vector.begin(), vector.end())
+- sort(vector.begin(), vector.end(), greater<int>()) // descending
+- sort(vector.begin(), vector.end(), compare)
+  > bool compare(vector<int> a, vector<int> b){
+    return a < b; // ascending
+    }
+- 
+
+### stack (#include<stack>)
+- stack<int> s
+- s.push()
+- s.pop()
+- s.top()
+- s.size()
+- s.empty()
+
+
+### queue (#include<queue>)
+- queue<int> q
+- q.push()
+- q.front() // note front not top
+- q.pop()
+- q.size()
+- q.empty()
+
+### priority queue (#include<queue>)
+
+- priority_queue<int> pq // max-heap
+- pq.push()
+- pq.pop()
+- pq.top()
+- pq.size()
+- pq.empty()
+- priority_queue<int, vector<int>, greater<int>> pq // min-heap
+
+### pairs (#inlcude<utility>)
+
+- pair<int, char> p
+- pair  p;          //default
+- pair  p(1, 'a');  //initialized,  different data type
+- pair  p(1, 10);   //initialized,  same data type
+- pair  p(g3);      //copy of g3
+- pair <int, int> p = make_pair(1, 10)
+- pair <int, int> p = {1, 10} // prefer
+- p.first, p.second;
+- pair<int, pair<int, char> > p1 = { 3, { 4, 'a' } };
+
+### tuple (#include<tuple>)
+- tuple<char, int, float> t;
+- t = make_tuple('a', 1, 1.1);
+- get<0> t, get<1> t, get<2> t
+- auto [a, b, c] = t // structured binding (c++17 !caution)
+
+### set (#inlcude<set>)
+- set<int> s
+- set<int> s = {1, 2, 3}
+- s.insert() // add elem
+- set<int> s2(s) // copy set to another set
+- s.size()
+- s.empty()
+- s.clear()
+- s.count(val) // returns 0/1 tell if an element exists or not in a set
+- s.find(val)    // return the pos of the num or s.end() if not exists
+- s.lower_bound(val)
+- s.upper_bound(val)
+
+### map (#include<map>)
+- map <int, int> m
+- m[key] = val
+- m.insert({1, 4}) // another way of inserting
+- m.erase()
+- m.clear()
+- m.size()
+- m.upper_bound(val)
+- m.lower_bound(val)
+- for(auto it : map) cout << "key" << it.first << "value" << it.second
+- m.find(key) // returns iterator of that element or m.end() if not present
+- m.empty()
+
+### unordered_map (#include unordered_map)
+- same as elements are stored unorderedly
+
+### unordered_set (#include <unordered_set>)
+- same as set but stored in randomized way
+
+### multiset (#include <set>)
+- same as set but allow multiple elements to be inserted
+
+### unordered_multiset (#include <unordered_multiset>)
+- same as set but allow multiple elements stored in randomised way
+
+### useful functions
+ ## accumulate (#inlcude <numeric>)
+ int sum =  0
+ accumulate(arr, arr + n, sum) // sum of elements 
+
+ accumulate(arr, arr + n, sum, myfun) // perform custom operation on adjacent elem
+ int myfun(int x, int y) return x * y; // sum of product of adjacent elem
+ 
+ ## BinarySearch (#inlcude <algorithm>)
+  binary_search(v.begin(), v.end(), val) // on a sorted datastructure
+
+ ## lower_bound, upper_bound (#inlcude <algorithm>)
+  lower_bound(v.begin(), v.end, val);
+  upper_bound(v.begin(), v.end, val);
