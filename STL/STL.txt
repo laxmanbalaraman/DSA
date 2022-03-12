@@ -34,7 +34,16 @@
   > bool compare(vector<int> a, vector<int> b){
     return a < b; // ascending
     }
-- 
+
+### string (#include<string>)
+  - string str
+  - str.push_back('s')
+  - str.pop_back()
+  - str1.insert(index/iterator, string1, string1 index, no of character of string 1)
+  - str.erase(str.begin() + 0, str.end() - 6) // erase from to
+  - str.erase(1, 4) // delete 4 characters from index 1
+  - str1.find(str2) // returns index or npos (end)
+  - string::npos // end of string - no position, this constant is defined with a value of -1
 
 ### stack (#include<stack>)
 - stack<int> s
@@ -43,7 +52,7 @@
 - s.top()
 - s.size()
 - s.empty()
-
+- s.insert(index, string)
 
 ### queue (#include<queue>)
 - queue<int> q
@@ -133,3 +142,12 @@
  ## lower_bound, upper_bound (#inlcude <algorithm>)
   lower_bound(v.begin(), v.end, val);
   upper_bound(v.begin(), v.end, val);
+
+## remove (#include <algorithm>)
+  remove(vec1.begin(), vec1.end(), 20)
+
+## lambda expression
+  sort(v.begin(), v.end(), [](const int& a, const int& b) -> bool
+    {
+        return a > b;
+    });
