@@ -20,6 +20,7 @@
 - v2 = v1 (assign v1 to v2)
 - vector<int> v2(v1) // another way of copying vector
 - reverse(v.begin(), v.end())
+- vec.erase(std::remove(vec.begin(), vec.end(), 8), vec.end()) // erase by value
 
 ### array
 - int a[100];
